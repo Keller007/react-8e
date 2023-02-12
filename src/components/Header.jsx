@@ -12,7 +12,7 @@ const HeaderEl = styled.header`
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-text: center;
+  align-items: center;
   padding: 2rem 0;
   color: var(--colors-text);
   font-size: var(--fs-sm);
