@@ -4,6 +4,7 @@ import { IoMoonOutline, IoMoon } from "react-icons/io5";
 import { Container } from "./Container";
 
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const HeaderEl = styled.header`
   box-shadow: var(--shadow);
@@ -17,13 +18,12 @@ const Wrapper = styled.div`
   color: var(--colors-text);
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
+
+  & > a {
+    text-decoration: none;
+  }
 `;
 
-const Title = styled.a.attrs({
-  href: "/",
-})`
-  text-decoration: none;
-`;
 const ModeSwitcher = styled.div`
   cursor: pointer;
   text-transform: capitalize;
@@ -40,7 +40,7 @@ export const Header = () => {
       <HeaderEl>
         <Container>
           <Wrapper>
-            <Title>Where is the world ?</Title>
+            <NavLink to="/">Where is the world ?</NavLink>
             <ModeSwitcher onClick={toggleTheme}>
               {theme === "light" ? (
                 <IoMoonOutline size="14px" />

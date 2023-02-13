@@ -4,7 +4,7 @@ import { Search } from "./Search";
 import { CustomSelect } from "./CustomSelect";
 
 const options = [
-  { value: "Afrika", label: "Afrika" },
+  { value: "Africa", label: "Africa" },
   { value: "America", label: "America" },
   { value: "Asia", label: "Asia" },
   { value: "Europe", label: "Europe" },
@@ -23,9 +23,15 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Control = () => {
+export const Control = ({ onSearch }) => {
   const [search, setSearch] = React.useState("");
   const [region, setRegion] = React.useState("");
+
+  React.useEffect(() => {
+    const regionValue = region?.value || "";
+    onSearch(search, regionValue);
+  }, [search, region]);
+
   return (
     <Wrapper>
       <Search search={search} setSearch={setSearch} />
