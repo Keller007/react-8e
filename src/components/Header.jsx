@@ -21,6 +21,9 @@ const Wrapper = styled.div`
 
   & > a {
     text-decoration: none;
+    :visited {
+      color: var(--colors-text);
+    }
   }
 `;
 
